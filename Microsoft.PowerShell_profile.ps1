@@ -44,9 +44,15 @@ function gitpkg
 
 function saveprofile
 {
-
-
-
+    param($message)
+    git clone https://github.com/toeb/dotfiles.git tmprepo
+    pushd tmprepo
+    cp $profile .
+    git add .
+    git commit -m "updated profile $message"
+    git push
+    popd
+    rm -r tmprepo
 
 
 }
