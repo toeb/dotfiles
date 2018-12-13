@@ -52,7 +52,7 @@ function saveprofile
     git commit -m "updated profile $message"
     git push
     popd
-    rm -r tmprepo
+    rm -Force -Recurse .\tmprepo\ 
 
 
 }
